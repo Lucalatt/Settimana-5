@@ -1,0 +1,25 @@
+package it.lucal.app.dao;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.riccardodegni.W5L4.W5L4.entities.Role;
+import com.riccardodegni.W5L4.W5L4.entities.User;
+
+@Service
+public class DaoService {
+
+	
+	
+	@Autowired
+	private RoleRepository roleRepo;
+	
+
+	
+	public Role saveRole(Role obj) {
+		return roleRepo.save(obj);
+	}
+	
+}

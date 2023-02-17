@@ -1,0 +1,18 @@
+package it.lucal.app.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.riccardodegni.W5L3.W5L3.services.PersonService;
+
+import it.lucal.app.dao.EdificioService;
+
+@RestController
+@RequestMapping("/")
+public class EdificioController {
+	
+	@Autowired
+	private EdificioService es;
+
+}

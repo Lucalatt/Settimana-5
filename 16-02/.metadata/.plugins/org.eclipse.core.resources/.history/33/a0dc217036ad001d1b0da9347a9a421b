@@ -1,0 +1,27 @@
+package it.lucal.app.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import it.lucal.app.dao.EdificioService;
+import it.lucal.app.entity.Edificio;
+
+@RestController
+@RequestMapping("/")
+public class EdificioController {
+	
+	@Autowired
+	private EdificioService es;
+
+	@PostMapping("edifici")
+	public ResponseEntity<Object> postEdificio(@RequestBody Edificio e)  {
+		Edificio edificio = es.save(e);
+		return new ResponseEntity<>(edificio, HttpStatus.CREATED);
+	}
+}
